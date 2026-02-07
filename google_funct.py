@@ -4,6 +4,7 @@ from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
 from datetime import datetime, timedelta, timezone
+import requests
 
 load_dotenv()
 
@@ -91,3 +92,4 @@ def get_events_next_week(calendar_service):
 
     return events_result.get("items", [])
 
+print(get_events_next_week(calendar_service=calendar_service))
